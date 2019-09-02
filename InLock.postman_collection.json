@@ -1,0 +1,384 @@
+{
+	"info": {
+		"_postman_id": "4a0fc4e3-99df-46d5-a54a-32fef762e9ec",
+		"name": "InLock",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Estudios",
+			"item": [
+				{
+					"name": "Estudio/Listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNsaWVudGVAY2xpZW50ZS5jb20iLCJqdGkiOiIyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQyIsImV4cCI6MTU2NzQzMzU5MywiaXNzIjoiSW5Mb2NrLldlYkFwaSIsImF1ZCI6IkluTG9jay5XZWJBcGkifQ._wz-p_fbl95CFqBJwcecD0Cr-aQa7lIVoYl4IhUdIKs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Estudios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Estudios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estudios/Inserir",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhbGViZUBhZG1pbi5jb20iLCJqdGkiOiI0IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQSIsImV4cCI6MTU2NzQzNTQ1NSwiaXNzIjoiSW5Mb2NrLldlYkFwaSIsImF1ZCI6IkluTG9jay5XZWJBcGkifQ.CLoXH0pgQlk3aEVKflTPXTRqsC5HoYKeFRypimtrG8E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nomeEstudio\": \"Sony\",\n    \"paisId\": 1,\n    \"dataCriacao\": \"2009-05-11T00:00:00\",\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Estudios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Estudios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estudios/Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBIiwiZXhwIjoxNTY3NDM0MjU4LCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.XLEu8K7m8-Nky96flEvu5IahCH8_Ck-gnbzTMWV8j-s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Estudios/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Estudios",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estudios/Alterar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBIiwiZXhwIjoxNTY3NDM0MjU4LCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.XLEu8K7m8-Nky96flEvu5IahCH8_Ck-gnbzTMWV8j-s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nomeEstudio\": \"Sony\",\n    \"paisId\": 2,\n    \"dataCriacao\": \"2009-05-11T00:00:00\",\n    \"usuarioId\": 1\n\t\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Estudios/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Estudios",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Jogos",
+			"item": [
+				{
+					"name": "Jogos/Listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNsaWVudGVAY2xpZW50ZS5jb20iLCJqdGkiOiIyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQyIsImV4cCI6MTU2NzQzMTc5MiwiaXNzIjoiSW5Mb2NrLldlYkFwaSIsImF1ZCI6IkluTG9jay5XZWJBcGkifQ.yISGT2b-ELoufBXpsZuS-xP5KxpcmHfocvBjI-dDETs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/jogos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos/Inserir",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNsaWVudGVAY2xpZW50ZS5jb20iLCJqdGkiOiIyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQyIsImV4cCI6MTU2NzQzMzU5MywiaXNzIjoiSW5Mb2NrLldlYkFwaSIsImF1ZCI6IkluTG9jay5XZWJBcGkifQ._wz-p_fbl95CFqBJwcecD0Cr-aQa7lIVoYl4IhUdIKs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"nomeJogo\": \"Final Fantasy VII\",\r\n    \"descricao\": \"Doideira pura\",\r\n    \"dataLancamento\": \"1995-02-18T00:00:00\",\r\n    \"valor\": 75.0,\r\n    \"estudioId\": 3\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/jogos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos/Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBIiwiZXhwIjoxNTY3NDMyOTAwLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.RYDgBjnX2juz6CVjtLfyNhCkKTLHvei6o84McgKukIU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/jogos/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos/Alterar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBIiwiZXhwIjoxNTY3NDMyOTAwLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.RYDgBjnX2juz6CVjtLfyNhCkKTLHvei6o84McgKukIU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nomeJogo\": \"Kingdom Hearts III\",\n    \"descricao\": \"Disney + Final Fantasy\",\n    \"dataLancamento\": \"2019-01-25T00:00:00\",\n    \"valor\": 120.0,\n    \"estudioId\": 3\n\t\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/jogos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"jogos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"calebe@admin.com\",\n\t\"senha\":\"123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuarios/Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBIiwiZXhwIjoxNTY3NDM0MjU4LCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.XLEu8K7m8-Nky96flEvu5IahCH8_Ck-gnbzTMWV8j-s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"diego@admin.com\",\n\t\"senha\":\"123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Usuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
