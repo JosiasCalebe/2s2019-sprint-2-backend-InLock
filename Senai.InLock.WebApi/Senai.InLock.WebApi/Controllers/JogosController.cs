@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Senai.InLock.WebApi.Domains;
 using Senai.InLock.WebApi.Repositories;
+using Senai.InLock.WebApi.ViewsModel;
 
 namespace Senai.InLock.WebApi.Controllers
 {
@@ -24,7 +26,9 @@ namespace Senai.InLock.WebApi.Controllers
         public IActionResult Listar()
         {
             return Ok(jogoRepository.Listar());
+
         }
+
 
         [Authorize(Roles ="A")]
         [HttpPost]
@@ -74,6 +78,6 @@ namespace Senai.InLock.WebApi.Controllers
 
 
 
-
+        
     }
 }

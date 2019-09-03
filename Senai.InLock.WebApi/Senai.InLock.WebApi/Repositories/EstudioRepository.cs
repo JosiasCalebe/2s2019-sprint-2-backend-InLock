@@ -25,6 +25,8 @@ namespace Senai.InLock.WebApi.Repositories
                     a.nomeEstudio = E.NomeEstudio;
                     a.dataCriacao = E.DataCriacao;
                     a.estudioId = E.EstudioId;
+                    a.nomePais = ctx.Paises.Find(E.PaisId).NomePais;
+                    a.emailUsuario = ctx.Usuarios.Find(E.UsuarioId).Email;
 
                     ViewsModel.Add(a);
                 }

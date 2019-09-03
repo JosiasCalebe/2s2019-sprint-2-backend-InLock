@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Senai.InLock.WebApi.Domains;
+using Senai.InLock.WebApi.ViewsModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,28 @@ namespace Senai.InLock.WebApi.Repositories
 {
     public class JogoRepository
     {
-        public List<Jogos> Listar()
+        public List<JogoViewModel> Listar()
         {
-            using(InLockContext ctx = new InLockContext())
+            using (InLockContext ctx = new InLockContext())
             {
-                return ctx.Jogos.Include(x=> x.Estudio).ToList();
-            }
+                var listaJogos = ctx.Jogos.Include(x => x.Estudio).ToList();
+                List<JogoViewModel> ViewsModel = new List<JogoViewModel>();
 
+                foreach (var E in listaJogos)
+                {
+                    var a = new JogoViewModel();
+
+                    a.jogoId = E.JogoId;
+                    a.nomeJogo = E.NomeJogo;
+                    a.descricao = E.Descricao;
+                    a.dataLancamento = E.DataLancamento;
+                    a.valor = E.Valor;
+                    a.nomeEstudio = ctx.Estudios.Find(E.EstudioId).NomeEstudio;
+                    ViewsModel.Add(a);
+                }
+
+                return ViewsModel;
+            }
         }
 
         public void Inserir(Jogos jogo)
