@@ -26,7 +26,6 @@ namespace Senai.InLock.WebApi.Controllers
         public IActionResult Listar()
         {
             return Ok(jogoRepository.Listar());
-
         }
 
 
@@ -76,8 +75,44 @@ namespace Senai.InLock.WebApi.Controllers
             }
         }
 
+        [Authorize]
+        [HttpGet("{lancamentos}")]
+        public IActionResult Lancamentos()
+        {
+            return Ok(jogoRepository.Lancamentos());
+        }
 
+        [Authorize]
+        [HttpGet("{nome}/buscar")]
+        public IActionResult BuscarPeloNome(string nome)
+        {
+            try
+            {
+                List<JogoViewModel> a = jogoRepository.BuscarPeloNome(nome);
+                return Ok(a);
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
 
-        
+        }
+
+        [Authorize]
+        [HttpGet("maiscaros")]
+        public IActionResult MaisCaros()
+        {
+
+            return Ok(jogoRepository.MaisCaros());
+        }
+
+        [Authorize]
+        [HttpGet("lancamentos")]
+        public IActionResult Listarr()
+        {
+            return Ok(jogoRepository.Listarr());
+
+        }
+
     }
 }

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.InLock.WebApi.Domains;
 using Senai.InLock.WebApi.Repositories;
+using Senai.InLock.WebApi.ViewsModel;
 
 namespace Senai.InLock.WebApi.Controllers
 {
@@ -33,7 +34,6 @@ namespace Senai.InLock.WebApi.Controllers
         {
             var identity = HttpContext.User.Identity as ClaimsIdentity;
             estudio.UsuarioId = Convert.ToInt32(identity.FindFirst(JwtRegisteredClaimNames.Jti).Value);
-
 
             try
             {
@@ -77,6 +77,68 @@ namespace Senai.InLock.WebApi.Controllers
             }
         }
 
+        [Authorize]
+        [HttpGet("jogos")]
+        public IActionResult ListarComJogos()
+        {
+            return Ok(estudioRepository.ListarComJogos());
+        }
+
+
+        [Authorize]
+        [HttpGet("{nome}/buscar")]
+        public IActionResult BuscarPeloNome(string nome)
+        {
+            try
+            {
+                List<JogoViewModel> a = estudioRepository.BuscarPeloNome(nome);
+                return Ok(a);
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
+        }
+
+
+        [Authorize(Roles = "A")]
+        [HttpGet("inseridos")]
+        public IActionResult InseridosPeloAdm()
+        {
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            int idUser = Convert.ToInt32(identity.FindFirst(JwtRegisteredClaimNames.Jti).Value);
+
+            try
+            {
+                List<EstudioViewModel> a = estudioRepository.BuscarPeloIdUsuario(idUser);
+                return Ok(a);
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
+        }
+
+
+        [Authorize]
+        [HttpGet("dezdias")]
+        public IActionResult Listarr()
+        {
+            return Ok(estudioRepository.Listarr());
+        }
+
+        [Authorize]
+        [HttpGet("pais/{id}")]
+        public IActionResult ListarPorPais(int id)
+        {
+            return Ok(estudioRepository.ListarPorPais(id));
+        }
+        [Authorize]
+        [HttpGet("pais/jogos/{id}")]
+        public IActionResult ListarJogosPorPais(int id)
+        {
+            return Ok(estudioRepository.ListarJogosPorPais(id));
+        }
 
 
 
